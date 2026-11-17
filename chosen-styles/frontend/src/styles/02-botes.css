@@ -1,0 +1,16 @@
+/* ===== Botões ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 24px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;text-decoration:none;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;transition:background-color .3s var(--ease-std),color .3s var(--ease-std),transform .2s var(--ease-std)}
+.btn:hover:not(:disabled){background:var(--ink);color:var(--off)}
+.btn:active:not(:disabled){transform:scale(.97)}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.btn-dark{background:var(--off);color:var(--black);border-color:var(--off)}
+.btn-dark:hover:not(:disabled){background:transparent;color:var(--off)}
+.rt-btn{position:relative;display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 30px;border:1px solid var(--gold);background:var(--gold);color:var(--black);text-decoration:none;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;overflow:hidden}
+.rt-window{position:relative;display:block;overflow:hidden;white-space:nowrap}
+.rt-copy{display:block;transition:transform .3s var(--ease-std)}
+.rt-copy--in{position:absolute;inset:0;transform:translateY(-100%)}
+.rt-btn.is-active .rt-copy--out{transform:translateY(100%)}
+.rt-btn.is-active .rt-copy--in{transform:translateY(0)}
+.rt-arrow{display:inline-block;transition:transform .3s var(--ease-std)}
+.rt-btn.is-active .rt-arrow{transform:translateX(4px)}
+.rt-btn--dark{background:transparent;color:var(--gold);border-color:var(--gold)}

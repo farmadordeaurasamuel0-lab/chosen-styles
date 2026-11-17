@@ -1,0 +1,18 @@
+{
+  "name": "chosen-styles-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "API de pagamentos da Chosen Styles (Mercado Pago Checkout Pro, com webhooks).",
+  "type": "module",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "node --test"
+  },
+  "optionalDependencies": {
+    "pg": "^8.11.3"
+  }
+}

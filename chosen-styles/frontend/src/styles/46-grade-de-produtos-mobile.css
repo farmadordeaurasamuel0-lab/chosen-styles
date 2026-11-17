@@ -1,0 +1,5 @@
+/* ===== Grade de produtos em coluna única no celular e em telas estreitas ===== */
+@media (max-width:860px){
+  .grid{grid-template-columns:minmax(0,1fr)!important}
+  .grid .product{min-width:0}
+}

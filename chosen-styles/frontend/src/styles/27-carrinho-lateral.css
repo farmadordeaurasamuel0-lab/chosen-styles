@@ -1,0 +1,13 @@
+/* ===== Carrinho lateral ===== */
+.overlay{position:fixed;inset:0;z-index:60;background:rgba(12,11,10,.45);opacity:0;visibility:hidden;transition:opacity .4s var(--ease-out),visibility .4s}
+.overlay.is-open{opacity:1;visibility:visible}
+
+.drawer.is-open{transform:none;visibility:visible}
+
+.cart-info{display:grid;gap:4px}
+
+@media (pointer:coarse){.size{min-height:48px}.line-end button{min-height:44px;padding:0 6px}}
+.qty button:disabled{opacity:.3;cursor:not-allowed}
+
+.line-end{text-align:right;display:grid;gap:8px;justify-items:end}
+

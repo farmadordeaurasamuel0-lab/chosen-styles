@@ -1,0 +1,4 @@
+/* ===== Títulos com revelação por palavra ===== */
+.split-word{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.split-word > span{display:inline-block;transform:translateY(120%)}
+@media (prefers-reduced-motion:reduce){.split-word > span{transform:none}}

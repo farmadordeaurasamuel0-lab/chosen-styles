@@ -1,0 +1,28 @@
+/* ===== Transição da abertura para a tela inicial, sem travamento =====
+ * Durante a transição, só propriedades que a placa de vídeo compõe sem repintar (transform e opacity).
+ * Desfoques e mistura de cores, que repintam a tela inteira a cada quadro, saem desse momento.
+ */
+
+/* Foco da foto: só ampliação e opacidade (sem desfoque sobre a imagem grande) */
+
+@keyframes hero-focus{
+  from{transform:scale(1.08);opacity:.25}
+  to{transform:scale(1);opacity:1}
+}
+
+/* Textos da tela inicial: sobem e aparecem, sem desfoque */
+@keyframes hero-rise{
+  from{opacity:0;transform:translateY(24px)}
+  to{opacity:1;transform:none}
+}
+
+/* Efeitos da abertura que não precisam continuar quando as cortinas se fecham */
+.intro-beam{position:absolute;inset:-25%;z-index:1;pointer-events:none;background:linear-gradient(104deg,transparent 40%,rgba(255,226,160,.2) 50%,transparent 60%);mix-blend-mode:normal;transform:translateX(-70%);animation:intro-beam 3.8s cubic-bezier(.4,0,.2,1) .5s forwards;}
+.intro.is-leaving .intro-depth,
+.intro.is-leaving .intro-beam{opacity:0;transition:opacity .3s linear}
+.intro.is-leaving .intro-rays{opacity:0!important}
+
+/* Pontos de contato entre cortinas e tela inicial: sem sombra com desfoque durante o movimento */
+.intro-curtain{position:fixed;left:0;right:0;height:50%;z-index:302;background:#0a0a0a;pointer-events:none;will-change:transform;box-shadow:none;}
+.intro-curtain--top{top:0;transform:translateY(-100%);border-bottom:1px solid rgba(212,175,55,.8);box-shadow:0 12px 44px rgba(212,175,55,.22);}
+.intro-curtain--bottom{bottom:0;transform:translateY(100%);border-top:1px solid rgba(212,175,55,.8);box-shadow:0 -12px 44px rgba(212,175,55,.22);}

@@ -1,0 +1,16 @@
+/* ===== Trocas e reembolso ===== */
+.returns{background:var(--paper);border-top:1px solid var(--border)}
+.returns-inner{max-width:1040px;margin:0 auto;display:grid;gap:clamp(28px,4vw,44px)}
+.returns-head{display:grid;gap:16px}
+.returns-eyebrow{display:flex;align-items:center;gap:14px;margin:0;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.returns-eyebrow::before{content:"";width:40px;height:1px;background:var(--gold)}
+.returns-head h2{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;line-height:1.04;margin:0}
+.returns-head h2 em{color:var(--gold);font-style:italic}
+.returns-lead{margin:0;color:var(--champagne);max-width:52ch;line-height:1.6}
+.returns-steps{list-style:none;margin:0;padding:0;display:grid}
+@media(min-width:800px){.returns-steps{grid-template-columns:repeat(3,1fr);gap:28px}}
+.returns-steps li{border-top:1px solid var(--border);padding:24px 0;display:grid;gap:10px;align-content:start}
+.returns-num{font-family:var(--font-display);color:var(--gold);font-size:1.1rem}
+.returns-steps h3{margin:0;font-family:var(--font-display);font-size:1.6rem;font-weight:500}
+.returns-steps p{margin:0;color:var(--champagne);line-height:1.6;font-size:.95rem}
+.returns-note{margin:0;font-size:.82rem;color:var(--muted)}

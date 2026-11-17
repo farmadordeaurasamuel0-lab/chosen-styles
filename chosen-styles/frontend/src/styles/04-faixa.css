@@ -1,0 +1,7 @@
+/* ===== Faixa ===== */
+
+.band-line{overflow:hidden;white-space:nowrap;margin:0;font-family:Impact,"Anton",sans-serif;font-size:clamp(1.8rem,6vw,3.4rem);line-height:1.05;text-transform:uppercase}
+.band-track{display:inline-flex;will-change:transform}
+.band-unit{display:inline-flex;gap:.6em;padding-right:.6em}
+.text-solid{color:var(--off)}
+.text-outline{color:transparent;-webkit-text-stroke:1px var(--off)}

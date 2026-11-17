@@ -1,0 +1,35 @@
+/* ===== Posição e tamanho do assistente em cada tela ===== */
+
+/* Computador: janela flutuante no canto, logo acima do botão */
+@media (min-width:601px){
+  .bot-toggle{right:24px;bottom:24px}
+  .bot{right:24px;bottom:96px;width:min(380px,calc(100vw - 48px));height:min(560px,calc(100vh - 136px));height:min(560px,calc(100dvh - 136px));max-height:calc(100dvh - 136px)}
+}
+
+/* Celular: folha inferior de altura fixa, em coluna simples (cabeçalho, conversa, sugestões, campo) */
+@media (max-width:600px){
+  .toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+  .bot-toggle{left:50%!important;right:auto!important;bottom:calc(16px + env(safe-area-inset-bottom,0px))}
+  .bot{
+    display:flex!important;
+    flex-direction:column;
+    left:0!important;right:0!important;bottom:0!important;top:auto!important;
+    width:100%!important;max-width:100%!important;
+    height:min(60vh,520px)!important;
+    height:min(60dvh,520px)!important;
+    max-height:60vh!important;
+    border-radius:22px 22px 0 0!important;
+    margin:0!important;
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  .bot-handle{flex:none}
+  .bot-head{flex:none}
+  .bot-log{flex:1 1 auto;min-height:0;overflow-y:auto}
+  .bot-chips{flex:none}
+  .bot-form{flex:none}
+
+  /* Ao digitar: a folha vai para a parte de cima da tela e o campo fica acima do teclado */
+  .bot.is-typing{top:0!important;bottom:auto!important;height:50vh!important;height:50dvh!important;max-height:50vh!important;padding-top:env(safe-area-inset-top,0px);border-radius:0 0 22px 22px!important;border-top:0!important;border-bottom:1px solid rgba(212,175,55,.45)!important}
+  .bot.is-typing .bot-handle{display:none}
+  .bot.is-typing .bot-chips{display:none}
+}

@@ -1,0 +1,15 @@
+/* ===== Pedido enviado: confere na sacola e lista de compras na conta ===== */
+.sent-status{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.sent-check{width:16px;height:16px;flex:none;stroke:currentColor}
+.cart-line.is-sent{border-color:rgba(212,175,55,.35)}
+.cart-note{list-style:none;color:var(--muted);font-size:.88rem;line-height:1.6;padding:14px 0}
+
+.acc-orders{display:grid;gap:12px;margin:18px 0 22px}
+.acc-orders-title{margin:0;font-family:var(--font-display);font-size:1.35rem;font-weight:500}
+.acc-orders-empty{margin:0;color:var(--muted);font-size:.9rem}
+.acc-order{border:1px solid var(--border);background:var(--paper);padding:14px 16px;display:grid;gap:8px}
+.acc-order-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.acc-order-status{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.acc-order-status svg{width:16px;height:16px;flex:none}
+.acc-order-items{margin:0;font-size:.92rem;line-height:1.5;color:var(--champagne)}
+.acc-order small{color:var(--muted);font-size:.78rem;line-height:1.5}

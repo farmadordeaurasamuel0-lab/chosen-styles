@@ -1,0 +1,13 @@
+# Dependências e builds geradas
+node_modules/
+dist/
+.vercel/
+
+# Credenciais: nunca subir arquivos reais de ambiente
+.env
+.env.*
+!.env.example
+
+# Arquivos do sistema
+.DS_Store
+*.log

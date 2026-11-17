@@ -1,0 +1,13 @@
+/* ===== Carregamento inicial ===== */
+.loader{position:fixed;inset:0;z-index:200;display:none;place-items:center;background:var(--black);transition:opacity .45s var(--ease-std)}
+.is-loading .loader{display:grid}
+.loader.is-done{opacity:0;pointer-events:none}
+.loader-box{width:56px;height:56px;background:var(--off);border-radius:5px;animation:loader-kf 3s ease-in-out infinite}
+@keyframes loader-kf{
+  0%{transform:scale(1) rotate(0);border-radius:0%}
+  13.33%{transform:scale(2) rotate(0);border-radius:0%}
+  33.33%{transform:scale(2) rotate(180deg);border-radius:50%}
+  53.33%{transform:scale(1) rotate(180deg);border-radius:50%}
+  66.67%,100%{transform:scale(1) rotate(0);border-radius:0%}
+}
+@media (prefers-reduced-motion:reduce){.loader-box{animation:none}}

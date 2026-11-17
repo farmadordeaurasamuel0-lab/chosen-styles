@@ -1,0 +1,11 @@
+/* ===== Entrada da tela inicial sincronizada com a abertura das cortinas =====
+ * Tudo começa quando as cortinas se abrem (0,78 s) e termina antes do fim delas (1,8 s).
+ * Os atrasos usam !important porque o estilo base da tela inicial já define atrasos com !important.
+ */
+.hero-enter .hero-media{animation:hero-focus 1s cubic-bezier(.2,.7,.2,1) backwards;}
+.hero-enter .hero-eyebrow{animation:hero-rise .7s var(--ease-out) 0s both;}
+.hero-enter .hero-title .line > span{animation:hero-rise .8s var(--ease-out) .08s both;}
+.hero-enter .hero-title .line:nth-child(2) > span{animation-delay:.2s!important}
+.hero-enter .hero-sub{animation:hero-rise .7s var(--ease-out) .3s both;animation-delay:.3s!important}
+.hero-enter .hero-actions{animation:hero-rise .7s var(--ease-out) .42s both;animation-delay:.42s!important}
+.hero-enter .hero-scroll{animation:hero-rise .7s var(--ease-out) .52s both;animation-delay:.52s!important}

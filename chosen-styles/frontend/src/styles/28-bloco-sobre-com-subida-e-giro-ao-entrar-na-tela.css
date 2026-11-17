@@ -1,0 +1,3 @@
+/* ===== Bloco "Sobre" com subida e giro ao entrar na tela ===== */
+.js .lift{opacity:0}
+@media (prefers-reduced-motion:reduce){.js .lift{opacity:1}}

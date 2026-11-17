@@ -1,0 +1,8 @@
+/* ===== Profundidade nas fotos das camisetas ===== */
+.product-media,.pv-stage{perspective:1000px}
+.depth-on img{transform-style:preserve-3d;transition:transform .35s var(--ease-out),opacity .7s var(--ease-out)}
+.depth-on.is-zoomed img{transition:transform .5s var(--ease-out)}
+.depth-shine{position:absolute;inset:0;pointer-events:none;z-index:2;opacity:0;transition:opacity .45s var(--ease-out);background:radial-gradient(circle at var(--mx,50%) var(--my,30%),rgba(255,255,255,.16) 0%,rgba(255,255,255,0) 50%)}
+.depth-on:hover .depth-shine{opacity:1}
+.depth-on.is-zoomed .depth-shine{opacity:0}
+@media (prefers-reduced-motion:reduce){.depth-on img,.depth-shine{transition:none}}

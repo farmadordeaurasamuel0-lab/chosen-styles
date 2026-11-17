@@ -1,0 +1,30 @@
+/* ===== Transição: cortinas douradas que fecham e abrem a tela (fluida) =====
+ * Duração total de 1,5 s. As cortinas fecham com desaceleração suave, ficam juntas por um instante
+ * e se abrem com aceleração e desaceleração suaves. A abertura se apaga enquanto é coberta, e a tela
+ * inicial aparece no começo da abertura das cortinas, sem corte.
+ */
+
+.intro.is-leaving ~ .intro-curtain--top{animation:curtain-top 1.8s linear forwards}
+.intro.is-leaving ~ .intro-curtain--bottom{animation:curtain-bottom 1.8s linear forwards}
+@keyframes curtain-top{
+  0%{transform:translateY(-100%);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  40%{transform:translateY(0);animation-timing-function:linear}
+  45%{transform:translateY(0);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  100%{transform:translateY(-100%)}
+}
+@keyframes curtain-bottom{
+  0%{transform:translateY(100%);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  40%{transform:translateY(0);animation-timing-function:linear}
+  45%{transform:translateY(0);animation-timing-function:cubic-bezier(.65,0,.35,1)}
+  100%{transform:translateY(100%)}
+}
+
+/* A abertura se apaga enquanto as cortinas a cobrem; some apenas quando já está coberta */
+.intro.is-leaving{animation:intro-fade 1.8s linear forwards;}
+@keyframes intro-fade{
+  0%{opacity:1;visibility:visible}
+  25%{opacity:1;visibility:visible}
+  40%{opacity:0;visibility:visible}
+  41%,100%{opacity:0;visibility:hidden}
+}
+@media (prefers-reduced-motion:reduce){.intro-curtain{display:none}}

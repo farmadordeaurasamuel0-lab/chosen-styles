@@ -1,0 +1,11 @@
+/* ===== Transição da abertura para a tela inicial =====
+ * Enquanto a abertura se fecha num círculo, a foto da tela inicial entra em foco:
+ * começa ampliada e desfocada, e se acomoda no enquadramento normal.
+ * Só dura a transição; depois disso, o movimento de rolagem volta ao normal.
+ */
+
+@keyframes hero-focus{
+  from{transform:scale(1.1);filter:blur(16px)}
+  to{transform:scale(1);filter:blur(0)}
+}
+@media (prefers-reduced-motion:reduce){.hero-enter .hero-media{animation:none}}

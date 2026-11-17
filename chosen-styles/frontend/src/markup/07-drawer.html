@@ -1,0 +1,60 @@
+<div class="overlay" id="overlay" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" aria-hidden="true">
+  <div class="drawer-head">
+    <h2 id="drawer-title" class="display">Carrinho</h2>
+    <button class="icon-btn" type="button" id="drawer-close" aria-label="Fechar carrinho">Fechar</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-empty" id="cart-empty"><p style="margin:0 0 20px">Seu carrinho está vazio.</p><a class="btn" href="#colecao" id="cart-empty-cta">Ver a coleção</a></div>
+    <ul id="cart-items" style="list-style:none;padding:0;margin:0"></ul>
+  </div>
+  <div class="drawer-foot" id="drawer-foot" hidden>
+    <form class="coupon" id="coupon-form" novalidate>
+      <label for="coupon-input"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3.5 12.2V4.5a1 1 0 0 1 1-1h7.7l8.3 8.3a1.5 1.5 0 0 1 0 2.1l-6.2 6.2a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.4"/></svg><span>Cupom de desconto</span></label>
+      <div class="coupon-row">
+        <input id="coupon-input" name="coupon" type="text" autocomplete="off" maxlength="30" aria-describedby="coupon-status">
+        <button class="btn" type="submit">Aplicar</button>
+      </div>
+      <p class="coupon-status" id="coupon-status" role="status"></p>
+    </form>
+    <div class="drawer-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+    <form class="mini-signup" id="signup-form" novalidate>
+      <div class="step-head"><span class="step-num" aria-hidden="true">01</span><h3 class="step-title">Seus dados</h3></div>
+      <label class="field">
+        <span class="field-label">Nome completo</span>
+        <input name="fullname" type="text" autocomplete="name" required minlength="2" maxlength="80" aria-describedby="signup-error">
+      </label>
+      <label class="field">
+        <span class="field-label">E-mail</span>
+        <input name="email" type="email" autocomplete="email" required maxlength="120" aria-describedby="signup-error">
+      </label>
+      <label class="field">
+        <span class="field-label">CEP de entrega</span>
+        <input name="cep" type="text" inputmode="numeric" autocomplete="postal-code" required maxlength="9" placeholder="00000-000" aria-describedby="signup-error cep-note">
+      </label>
+      <p class="signup-note" id="cep-note">O frete é calculado pela loja a partir deste CEP, antes da confirmação. Nenhum valor de frete é cobrado pelo site.</p>
+      <p class="field-error" id="signup-error" role="alert"></p>
+      <button class="btn" type="submit">Salvar dados</button>
+      <p class="signup-note" id="signup-status" role="status">Os dados ainda não são enviados nem armazenados.</p>
+    </form>
+    <fieldset class="pay-methods" aria-describedby="payment-note">
+      <legend>Forma de pagamento</legend>
+      <label class="pay-option"><input type="radio" name="pay" value="pix"><span class="pay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3.5" y="3.5" width="7" height="7" rx="1"/><rect x="13.5" y="3.5" width="7" height="7" rx="1"/><rect x="3.5" y="13.5" width="7" height="7" rx="1"/><path d="M14 14h2.5v2.5H14zM18.5 14H21v2.5h-2.5zM14 18.5h2.5V21H14zM18.5 18.5H21V21h-2.5z"/></svg></span><span>Pix</span></label>
+      <label class="pay-option"><input type="radio" name="pay" value="debito"><span class="pay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><path d="M6 14.5h4"/></svg></span><span>Cartão de débito</span></label>
+      <label class="pay-option"><input type="radio" name="pay" value="credito"><span class="pay-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true" focusable="false"><rect x="2.5" y="5.5" width="19" height="13" rx="2"/><path d="M2.5 10h19"/><path d="M6 14.5h4"/></svg></span><span>Cartão de crédito</span></label>
+    </fieldset>
+    <button class="btn btn-dark" type="button" id="review-btn">Revisar pedido</button>
+    <div class="review" id="review" hidden>
+      <h3 class="review-title">Resumo do pedido</h3>
+      <ul class="review-list" id="review-list"></ul>
+      <p class="review-total" id="review-total"></p>
+      <p class="review-pay" id="review-pay"></p>
+      <button class="btn btn-dark" type="button" id="confirm-btn">Confirmar pedido</button>
+      <p class="coupon-status" id="confirm-status" role="status"></p>
+    </div>
+    <div class="payment-status" id="payment-note">
+      <p>O pedido ainda não é enviado nem pago: o provedor de pagamento e o sistema de pedidos ainda não estão conectados.</p>
+      <p>Preços e estoque serão validados no servidor antes de qualquer cobrança.</p>
+    </div>
+  </div>
+</aside>

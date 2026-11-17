@@ -1,0 +1,18 @@
+/* ===== Camisetas: animação de rolagem nativa do navegador (sem JavaScript a cada quadro) =====
+ * Onde o navegador oferece linhas do tempo ligadas à rolagem, a animação roda fora da
+ * thread principal, sem custo de script. Nos demais navegadores, o script de reserva assume.
+ */
+@supports (animation-timeline: view()) {
+  .grid .product-media img{
+    animation: shirt-settle linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 45%;
+  }
+}
+@keyframes shirt-settle{
+  from{scale:1.16;translate:0 3%}
+  to{scale:1;translate:0 0}
+}
+@media (prefers-reduced-motion:reduce){
+  .grid .product-media img{animation:none!important}
+}

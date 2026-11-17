@@ -1,0 +1,29 @@
+/* ===== Desempenho e responsividade ===== */
+
+/* Evita rolagem lateral causada por elementos largos (ex.: foto em 100vw) sem criar um contêiner de rolagem */
+body{margin:0;font-family:var(--font-body);background:var(--black);color:var(--off);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip;}
+
+/* Desfoque de fundo custa caro durante a rolagem: os botões de curtir ficam com fundo sólido */
+.like-btn{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:rgba(10,10,10,.72)!important}
+
+/* will-change fixo mantém camadas na memória sem necessidade; o navegador otimiza sozinho */
+.band-track,.hero-media,.hero-media img,.clip-media,.manifesto .clip-media{will-change:auto}
+
+/* Telas pequenas: títulos e blocos que não cabem na largura */
+@media (max-width:600px){
+  .hero-title{font-size:clamp(2.7rem,12.5vw,4.2rem);line-height:.98}
+  .hero-sub{font-size:1rem}
+  .hero-actions{gap:18px}
+  .manifesto-text h2{font-size:clamp(2.4rem,11vw,3.4rem)}
+  .manifesto-lead{font-size:clamp(1.6rem,7vw,2.1rem)}
+  .section-head h2,.about h2{font-size:clamp(2.2rem,10vw,3rem)}
+  .footer-top .logo{font-size:clamp(2rem,9vw,2.8rem);letter-spacing:.22em}
+  .pv-info h1{font-size:clamp(2.2rem,9vw,2.8rem)}
+  .pv-thumb{min-width:0;width:auto;flex:1 1 0;padding:0 8px}
+  .trust{padding:18px 16px}
+  .drawer-head,.drawer-body,.drawer-foot{padding-left:18px;padding-right:18px}
+}
+@media (max-width:360px){
+  .hero-title{font-size:2.4rem}
+  .size{min-width:44px;height:44px}
+}

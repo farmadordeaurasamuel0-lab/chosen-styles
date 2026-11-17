@@ -1,0 +1,61 @@
+/* ===== Assistente: versão própria para celular (folha inferior) e refinamentos ===== */
+
+/* Ajustes gerais (desktop) */
+.bot-head{padding:18px 20px}
+.bot-title{font-size:1.4rem}
+.bot-log{padding:18px 18px 10px}
+.bot-msg p{font-size:.94rem}
+.bot-toggle-label{display:none}
+.bot-handle{display:none}
+.bot-backdrop{display:none}
+.bot-backdrop[hidden]{display:none}
+
+/* ---------- Celular ---------- */
+@media (max-width:600px){
+  /* Botão vira uma pílula centralizada, com o rótulo "Dúvidas" */
+  .bot-toggle{left:50%;right:auto;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:auto;height:50px;padding:0 20px 0 16px;gap:10px;border-radius:25px;transform:translateX(-50%);background:rgba(10,10,10,.92);border:1px solid rgba(212,175,55,.7);box-shadow:0 14px 36px -10px rgba(0,0,0,.8)}
+  .bot-toggle:active{transform:translateX(-50%) scale(.96)}
+  .bot-toggle:hover{box-shadow:0 14px 36px -10px rgba(0,0,0,.8)}
+  .bot-toggle svg{width:20px;height:20px}
+  .bot-toggle-label{display:inline;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--off)}
+  .bot-toggle[aria-expanded=true]{opacity:0;pointer-events:none}
+
+  /* Folha inferior que sobe da parte de baixo da tela */
+  .bot{left:0;right:0;bottom:0;width:100%;height:min(88dvh,760px);height:min(88vh,760px);border:0;border-top:1px solid rgba(212,175,55,.45);border-radius:22px 22px 0 0;padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 -26px 60px -18px rgba(0,0,0,.85);transform-origin:50% 100%;z-index:90}
+  .bot.is-open{animation:sheet-up .5s cubic-bezier(.2,.9,.25,1) both}
+  .bot.is-closing{animation:sheet-down .28s ease-in both}
+  @keyframes sheet-up{from{transform:translateY(100%)}to{transform:none}}
+  @keyframes sheet-down{to{transform:translateY(100%)}}
+
+  /* Alça para arrastar e fechar */
+  .bot-handle{display:block;width:46px;height:5px;margin:10px auto 0;border-radius:3px;background:rgba(212,175,55,.5);cursor:grab;touch-action:none}
+
+  /* Cabeçalho compacto */
+  .bot-head{padding:12px 18px 14px}
+  .bot-title{font-size:1.2rem}
+  .bot-close{min-height:40px;padding:0 14px}
+
+  /* Mensagens ocupam mais largura e respiram melhor */
+  .bot-log{padding:16px 14px 12px;gap:14px}
+  .bot-msg{max-width:90%}
+  .bot-msg p{font-size:.96rem;line-height:1.6;padding:12px 15px}
+
+  /* Sugestões em uma faixa que desliza para o lado */
+  .bot-chips{flex-wrap:nowrap;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:none;padding:10px 14px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+  .bot-chips::-webkit-scrollbar{display:none}
+  .bot-chip{flex:none;scroll-snap-align:start;min-height:42px;padding:0 15px}
+
+  /* Campo fixo na base, com botão grande para o polegar */
+  .bot-form{padding:12px 14px calc(14px + env(safe-area-inset-bottom,0px));gap:10px;grid-template-columns:1fr 54px;background:var(--paper)}
+  .bot-form input{min-height:50px}
+  .bot-send{width:54px;min-height:50px}
+
+  /* Fundo escurecido atrás da folha */
+  .bot-backdrop:not([hidden]){display:block}
+  .bot-backdrop{position:fixed;inset:0;z-index:85;background:rgba(0,0,0,.62);opacity:1;animation:backdrop-in .35s ease both}
+  @keyframes backdrop-in{from{opacity:0}to{opacity:1}}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .bot.is-open,.bot.is-closing,.bot-backdrop{animation:none!important}
+}

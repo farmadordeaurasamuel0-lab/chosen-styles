@@ -1,0 +1,10 @@
+/* ===== Manifesto: foto em tela cheia (expansão) ===== */
+.manifesto{background:var(--black);color:var(--off);overflow:hidden;position:relative;}
+.soon{display:grid;gap:clamp(28px,5vw,64px);margin-top:clamp(48px,7vw,88px);padding-top:clamp(32px,5vw,56px);border-top:1px solid var(--border);position:relative;visibility:visible;opacity:1;}
+.manifesto .manifesto-inner{max-width:none!important;padding:0!important}
+.manifesto .clip-media{height:100svh;min-height:520px;border:0;width:100vw;margin-left:calc(50% - 50vw);border-radius:0;will-change:clip-path;}
+.manifesto .clip-media img{object-position:50% 28%}
+.manifesto .manifesto-text{padding:0 clamp(18px,4vw,48px);margin-top:clamp(56px,8vw,112px)}
+@media (max-width:860px){
+  .manifesto .clip-media{height:100svh;min-height:480px}
+}

@@ -1,0 +1,5 @@
+/* ===== Seções ===== */
+.section{padding:clamp(72px,10vw,128px) clamp(18px,4vw,48px)}
+.section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,56px)}
+
+.section-head p{margin:0;color:var(--muted);max-width:36ch;font-size:.95rem}

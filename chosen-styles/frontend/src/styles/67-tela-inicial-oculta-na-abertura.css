@@ -1,0 +1,26 @@
+/* ===== Tela inicial: nada aparece antes da transição, e tudo volta ao estado final =====
+ * intro-pending: a tela inicial fica oculta enquanto a abertura roda (definida antes da pintura).
+ * hero-enter: as entradas começam quando as cortinas cobrem a abertura. Preenchimento "both",
+ *   para que o estado final dure e nenhum texto volte a ficar oculto.
+ * hero-ready: ao final, cada elemento vira estático; a rolagem volta a controlar a tela sem conflito.
+ */
+.intro-pending .hero-media,
+.intro-pending .hero-media img{animation:none!important;opacity:0!important}
+.intro-pending .hero-eyebrow,
+.intro-pending .hero-title .line > span,
+.intro-pending .hero-sub,
+.intro-pending .hero-actions,
+.intro-pending .hero-scroll{animation:none!important;opacity:0!important}
+
+.hero-enter .hero-title .line:nth-child(2) > span{animation-delay:.6s}
+.hero-enter .hero-sub{animation:hero-rise 1s var(--ease-out) .85s both}
+.hero-enter .hero-actions{animation:hero-rise 1s var(--ease-out) 1s both}
+.hero-enter .hero-scroll{animation:hero-rise 1s var(--ease-out) 1.4s both}
+
+.hero-enter.hero-ready .hero-eyebrow,
+.hero-enter.hero-ready .hero-title .line > span,
+.hero-enter.hero-ready .hero-sub,
+.hero-enter.hero-ready .hero-actions,
+.hero-enter.hero-ready .hero-scroll{animation:none;opacity:1;transform:none;filter:none}
+
+@media (prefers-reduced-motion:reduce){.hero-enter *{animation:none!important}}

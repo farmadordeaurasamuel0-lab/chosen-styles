@@ -1,0 +1,12 @@
+/* ===== Próxima peça e cronômetro ===== */
+
+@media(min-width:760px){.soon{grid-template-columns:1fr 1fr;align-items:center}}
+
+.soon-tape{position:absolute;left:-15%;right:-15%;top:44%;transform:rotate(-9deg);background:var(--off);color:var(--black);padding:12px 0;overflow:hidden;z-index:1;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.soon-tape-track{display:flex;width:max-content;animation:tape-run 16s linear infinite}
+.soon-tape-group{display:flex;gap:26px;padding-right:26px;font-family:var(--font-display);font-size:clamp(1.1rem,2.6vw,1.5rem);font-weight:600;letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+@keyframes tape-run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.soon-tape-track{animation:none}}
+.soon-info{display:grid;gap:16px;align-content:center}
+
+.cd-label{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}

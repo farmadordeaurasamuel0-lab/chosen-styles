@@ -1,0 +1,8 @@
+/* ===== Contato ===== */
+.contact{display:grid;gap:14px}
+.contact-title{margin:0;font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.contact-links{display:flex;gap:12px;flex-wrap:wrap}
+.contact-link{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 16px;border:1px solid var(--border);color:var(--off);text-decoration:none;font-size:.92rem;transition:border-color .3s var(--ease-std),color .3s var(--ease-std)}
+.contact-link svg{width:20px;height:20px;flex:none}
+.contact-link:hover:not([aria-disabled=true]){border-color:var(--gold);color:var(--gold)}
+.contact-link[aria-disabled=true]{opacity:.45;cursor:default;pointer-events:none}

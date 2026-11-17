@@ -1,0 +1,15 @@
+/* ===== Sobre a marca: refinamento para computador ===== */
+@media (min-width:1100px){
+  .about{min-height:100vh;display:flex;align-items:center;padding-top:clamp(96px,11vh,140px);padding-bottom:clamp(96px,11vh,140px)}
+  .about-inner{width:100%}
+  .about::before{width:min(600px,50vw);right:-4%;top:4%;opacity:.12}
+  .about-head h2{font-size:clamp(4rem,6.4vw,6.6rem);line-height:.96}
+  .about-lead{font-size:clamp(1.25rem,1.6vw,1.5rem);max-width:30ch}
+  .about-body{font-size:1.12rem;max-width:52ch}
+  .about-pillars li{padding:34px 0 30px;grid-template-columns:auto 1fr;align-items:baseline;column-gap:28px}
+  .about-pillars li::before{grid-row:1 / span 2;font-size:clamp(2.6rem,3.6vw,3.8rem);letter-spacing:0;line-height:1;color:transparent;-webkit-text-stroke:1px rgba(212,175,55,.75)}
+  .about-pillars li h3{font-size:clamp(2rem,2.6vw,2.6rem);line-height:1}
+  .about-pillars li p{font-size:1.05rem;max-width:36ch}
+  .about-cta .rt-btn{min-height:60px;padding:0 34px;font-size:.82rem}
+  .about-draft{font-size:.8rem}
+}

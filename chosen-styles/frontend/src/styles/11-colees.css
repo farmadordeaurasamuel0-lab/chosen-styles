@@ -1,0 +1,6 @@
+/* ===== Coleções ===== */
+.collection-tabs{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 40px}
+.ctab{min-height:44px;padding:0 18px;border:1px solid var(--border);background:none;color:var(--off);cursor:pointer;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;transition:background-color .3s var(--ease-std),color .3s var(--ease-std),border-color .3s}
+.ctab:hover:not([aria-pressed=true]){border-color:var(--off)}
+.ctab[aria-pressed=true]{background:var(--off);color:var(--black);border-color:var(--off)}
+.empty-state{color:var(--muted);padding:48px 0;margin:0;grid-column:1/-1}

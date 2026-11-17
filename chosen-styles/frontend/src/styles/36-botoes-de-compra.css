@@ -1,0 +1,13 @@
+/* ===== Botões de compra animados ===== */
+.buy-btn{position:relative;overflow:hidden;transition:transform .25s var(--ease-std),background-color .35s var(--ease-std),color .35s var(--ease-std),border-color .35s var(--ease-std)}
+.buy-btn:hover:not(:disabled){transform:translateY(-2px)}
+.buy-letter{position:relative;display:inline-block;overflow:hidden;height:1.3em;line-height:1.3em;vertical-align:top}
+.buy-char{position:relative;display:block;white-space:pre;transition:transform .55s var(--ease-out);transition-delay:calc(var(--i) * 18ms)}
+.buy-char::after{content:attr(data-char);position:absolute;left:0;top:100%;color:var(--gold)}
+.buy-btn:hover:not(:disabled) .buy-char{transform:translateY(-100%)}
+.buy-btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.buy-btn,.buy-char{transition:none!important;transform:none!important}}
+
+/* O texto do botão é dividido em letras: sem espaço entre elas e sem encolher (em botões estreitos o texto ficava ilegível) */
+.buy-btn{gap:0}
+.buy-letter{flex:0 0 auto}

@@ -1,0 +1,87 @@
+/* ===== Abertura inicial (5 segundos, cinematográfica) ===== */
+.intro{display:none;position:fixed;inset:0;z-index:300;place-items:center;overflow:hidden;background:radial-gradient(ellipse at 50% 42%,#241d13 0%,#0a0a0a 58%,#050505 100%);}
+.js .intro{display:grid}
+
+/* Moldura dourada que se desenha ao abrir */
+.intro-frame{position:absolute;inset:22px;border:1px solid rgba(212,175,55,.22);transform:scaleY(0);transform-origin:50% 0;animation:intro-frame 1.2s var(--ease-out) .15s forwards;pointer-events:none}
+@keyframes intro-frame{to{transform:scaleY(1)}}
+
+.intro-skip:hover{border-color:var(--gold);color:var(--gold)}
+
+/* Cruz: desenhada e depois com um brilho dourado que respira uma vez */
+.intro-cross{width:34px;height:56px;color:var(--gold);stroke-dasharray:60;stroke-dashoffset:60;animation:intro-draw 1s ease .3s forwards,intro-glow 1.6s ease-in-out 1.3s both}
+@keyframes intro-draw{to{stroke-dashoffset:0}}
+@keyframes intro-glow{0%{filter:drop-shadow(0 0 0 rgba(212,175,55,0))}50%{filter:drop-shadow(0 0 14px rgba(212,175,55,.6))}100%{filter:drop-shadow(0 0 6px rgba(212,175,55,.25))}}
+
+/* Nome: letras que entram do desfoque para a nitidez, com um reflexo dourado passando por elas */
+.intro-logo{position:relative;overflow:hidden;margin:0;font-size:clamp(1.3rem,4vw,2.1rem);letter-spacing:.42em;color:var(--off);text-transform:uppercase}
+.intro-letters span{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(14px) scale(1.15);animation:intro-letter .9s var(--ease-out) forwards;animation-delay:calc(1.1s + var(--i) * 110ms)}
+@keyframes intro-letter{to{opacity:1;filter:blur(0);transform:none}}
+.intro-logo::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 38%,rgba(255,236,190,.5) 50%,transparent 62%);transform:translateX(-120%);animation:intro-sheen 1.2s ease 2.5s forwards;pointer-events:none}
+@keyframes intro-sheen{to{transform:translateX(120%)}}
+.intro-logo small{display:block;margin-top:8px;padding-left:.7em;font-size:.5em;letter-spacing:.7em;color:var(--champagne);opacity:0;animation:intro-rise .8s var(--ease-out) 2.2s forwards}
+@keyframes intro-rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+
+/* Filete dourado que se abre */
+.intro-rule{display:block;width:140px;height:1px;margin:-4px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent);transform:scaleX(0);animation:intro-rule 1s var(--ease-out) 1.8s forwards}
+@keyframes intro-rule{to{transform:scaleX(1)}}
+
+/* Palavras: uma após a outra, com desfoque de entrada e saída */
+.intro-words{position:relative;height:1.6em;margin:0;width:100%;font-family:var(--font-display);font-style:italic;font-size:clamp(1.3rem,3.4vw,1.8rem);color:var(--gold)}
+.intro-words span{position:absolute;left:0;right:0;top:0;opacity:0;filter:blur(6px);text-shadow:0 0 18px rgba(212,175,55,.25);animation:intro-word .8s var(--ease-out) forwards}
+.intro-words span:nth-child(1){animation-delay:2.5s}
+.intro-words span:nth-child(2){animation-delay:3.15s}
+.intro-words span:nth-child(3){animation-delay:3.8s}
+@keyframes intro-word{0%{opacity:0;filter:blur(6px);transform:translateY(12px)}25%{opacity:1;filter:blur(0);transform:none}70%{opacity:1;filter:blur(0)}100%{opacity:0;filter:blur(4px);transform:translateY(-10px)}}
+
+/* Saída: a abertura se fecha num círculo que encolhe até o centro, revelando a tela inicial */
+
+@keyframes intro-iris{from{clip-path:circle(150% at 50% 50%)}to{clip-path:circle(0% at 50% 50%);visibility:hidden}}
+
+@media (prefers-reduced-motion:reduce){.intro{display:none!important}}
+
+/* ===== Abertura: profundidade no fundo (camadas, luz e poeira) ===== */
+.intro-depth{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+
+.intro-depth i:nth-child(2){width:70vmax;height:70vmax;left:-22vmax;top:-20vmax;animation-duration:9s}
+.intro-depth i:nth-child(3){width:50vmax;height:50vmax;right:-14vmax;bottom:-12vmax;animation-duration:7s;animation-delay:-2s}
+.intro-depth i:nth-child(4){width:22vmax;height:22vmax;left:62%;top:20%;opacity:.6;animation-duration:5s;animation-delay:-1s}
+@keyframes intro-drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(3vmax,-2vmax,0) scale(1.1)}}
+
+.intro-rays{position:absolute;left:50%;top:50%;width:200vmax;height:200vmax;margin:-100vmax 0 0 -100vmax;background:repeating-conic-gradient(from 0deg,rgba(212,175,55,.07) 0deg 5deg,transparent 5deg 16deg);-webkit-mask:radial-gradient(circle,#000 0%,transparent 48%);mask:radial-gradient(circle,#000 0%,transparent 48%);opacity:0;animation:intro-spin 26s linear infinite,intro-rays-in 1.8s ease .2s forwards}
+@keyframes intro-spin{to{transform:rotate(360deg)}}
+@keyframes intro-rays-in{to{opacity:1}}
+
+.intro-dust{position:absolute;left:var(--x);bottom:-12px;width:var(--s);height:var(--s);border-radius:50%;background:var(--gold);box-shadow:0 0 8px rgba(212,175,55,.6);opacity:0;animation:intro-dust var(--d) linear var(--delay) forwards}
+@keyframes intro-dust{0%{transform:translate3d(0,0,0);opacity:0}15%{opacity:.75}100%{transform:translate3d(0,-108vh,0);opacity:0}}
+
+/* Câmera: o palco avança levemente para dentro da tela, criando sensação de profundidade */
+
+@keyframes intro-camera{from{transform:perspective(1000px) translateZ(-60px) scale(1.07)}to{transform:perspective(1000px) translateZ(0) scale(1)}}
+@media (prefers-reduced-motion:reduce){.intro-depth,.intro-depth *,.intro-stage{animation:none!important}}
+
+/* ===== Abertura: imagem de fundo com leitura garantida ===== */
+.intro-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%;z-index:0;pointer-events:none}
+/* Véu escuro: mais forte no centro, onde ficam o nome e as palavras */
+.intro::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at 50% 50%,rgba(10,10,10,.66) 0%,rgba(10,10,10,.5) 38%,rgba(10,10,10,.88) 100%),linear-gradient(180deg,rgba(10,10,10,.55) 0%,rgba(10,10,10,0) 30%,rgba(10,10,10,0) 70%,rgba(10,10,10,.8) 100%)}
+.intro-logo,.intro-words,.intro-rule{text-shadow:0 2px 26px rgba(0,0,0,.7)}
+.intro-depth i{position:absolute;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.26),transparent 66%);animation:intro-drift 7s ease-in-out infinite alternate;opacity:.55;}
+.intro-stage{position:relative;display:grid;justify-items:center;gap:24px;text-align:center;padding:24px;z-index:2;animation:intro-camera 5s cubic-bezier(.2,.7,.2,1) forwards;}
+
+/* ===== Abertura: efeitos de impacto (barras de cinema, feixe de luz e clarão) ===== */
+.intro-bar{position:absolute;left:0;right:0;height:0;background:#000;z-index:4;pointer-events:none}
+.intro-bar--top{top:0;animation:intro-bar 4.6s cubic-bezier(.6,0,.3,1) forwards}
+.intro-bar--bottom{bottom:0;animation:intro-bar 4.6s cubic-bezier(.6,0,.3,1) forwards}
+@keyframes intro-bar{0%{height:0}16%{height:11vh}82%{height:11vh}100%{height:0}}
+
+@keyframes intro-beam{to{transform:translateX(70%)}}
+
+.intro-flash{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:0;background:radial-gradient(circle at 50% 50%,rgba(255,236,190,.6) 0%,rgba(212,175,55,.18) 35%,transparent 62%);animation:intro-flash .8s ease 4.05s forwards}
+@keyframes intro-flash{0%{opacity:0}35%{opacity:1}100%{opacity:0}}
+
+.intro-skip{position:absolute;top:18px;right:18px;min-height:44px;padding:0 16px;background:none;border:1px solid var(--border);color:var(--off);font:inherit;font-size:.7rem;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;z-index:5;}
+@media (max-width:600px){
+  .intro-bar--top,.intro-bar--bottom{animation-name:intro-bar-sm}
+}
+@keyframes intro-bar-sm{0%{height:0}16%{height:9vh}82%{height:9vh}100%{height:0}}
+@media (prefers-reduced-motion:reduce){.intro-bar,.intro-beam,.intro-flash{display:none!important}}

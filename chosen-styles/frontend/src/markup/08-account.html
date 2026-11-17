@@ -1,0 +1,35 @@
+<dialog class="acc" id="acc" aria-labelledby="acc-title">
+  <div class="acc-head">
+    <div class="acc-titles">
+      <p class="acc-eyebrow">Chosen Styles</p>
+      <h2 id="acc-title" class="display">Minha <em>conta</em></h2>
+      <p class="acc-sub">Entre ou crie sua conta para salvar seus dados.</p>
+    </div>
+    <button class="pdp-close" type="button" id="acc-close">Fechar</button>
+  </div>
+  <div class="acc-body" id="acc-body">
+    <div class="acc-tabs" role="tablist" aria-label="Conta">
+      <button class="ctab" type="button" role="tab" data-acc="login" aria-selected="true">Entrar</button>
+      <button class="ctab" type="button" role="tab" data-acc="signup" aria-selected="false">Criar conta</button>
+    </div>
+    <form class="acc-form" id="acc-login" novalidate>
+      <label>E-mail<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+      <div class="pw-field"><label>Senha<input name="password" type="password" autocomplete="current-password" required maxlength="128"></label><button class="pw-toggle" type="button" aria-label="Mostrar senha" aria-pressed="false"><svg class="eye-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/></svg></button></div>
+      <p class="field-error" id="acc-login-error" role="alert"></p>
+      <button class="btn btn-dark btn-submit" type="submit"><span class="btn-label">Entrar</span><span class="btn-spinner" aria-hidden="true"></span></button>
+    </form>
+    <form class="acc-form" id="acc-signup" novalidate hidden>
+      <label>Nome<input name="fullname" type="text" autocomplete="name" required minlength="2" maxlength="80"></label>
+      <label>E-mail<input name="email" type="email" autocomplete="email" required maxlength="120"></label>
+      <div class="pw-field"><label>Senha (mínimo 8 caracteres)<input name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="128"></label><button class="pw-toggle" type="button" aria-label="Mostrar senha" aria-pressed="false"><svg class="eye-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg><svg class="eye-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M2.5 12s3.5-6.5 9.5-6.5S21.5 12 21.5 12s-3.5 6.5-9.5 6.5S2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/><path d="M4 4l16 16"/></svg></button></div>
+      <p class="field-error" id="acc-signup-error" role="alert"></p>
+      <button class="btn btn-dark" type="submit">Criar conta</button>
+    </form>
+    <div class="acc-session" id="acc-session" hidden>
+      <p>Você está entrando como <strong id="acc-name"></strong>.</p>
+      <div class="acc-orders" id="acc-orders" aria-live="polite"></div>
+      <button class="btn" type="button" id="acc-logout">Sair</button>
+    </div>
+    <p class="acc-warning">Esta conta fica salva apenas neste navegador e serve para testes. Não use senhas reais aqui. Para dados de clientes, é necessário um servidor com autenticação.</p>
+  </div>
+</dialog>

@@ -1,0 +1,12 @@
+/* ===== Pagamento ===== */
+.pay-methods{border:0;padding:0;margin:0;display:grid;gap:8px;min-width:0}
+.pay-methods legend{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;padding:0}
+.pay-option{display:flex;align-items:center;gap:12px;min-height:48px;padding:10px 14px;border:1px solid var(--border);color:var(--off);cursor:pointer}
+.pay-option:has(input:checked){border-color:var(--off)}
+.pay-option input{margin:0;accent-color:var(--off)}
+.pay-option span{display:grid;gap:2px;font-size:.92rem}
+.pay-option .pay-icon{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex:none;border:1px solid var(--border);color:var(--gold)}
+.pay-option .pay-icon svg{width:20px;height:20px}
+.pay-option:has(input:checked) .pay-icon{border-color:var(--gold)}
+.pay-option small{font-size:.78rem;color:var(--mineral)}
+

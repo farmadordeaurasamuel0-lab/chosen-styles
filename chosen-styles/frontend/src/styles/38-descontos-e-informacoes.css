@@ -1,0 +1,24 @@
+/* ===== Descontos e informações (visual) ===== */
+.coupon{display:grid;gap:12px;padding-top:20px;border-top:1px solid var(--border);}
+.coupon label{font-size:.7rem;color:var(--gold);display:flex;align-items:center;gap:10px;letter-spacing:.18em;text-transform:uppercase;}
+.coupon label svg{width:18px;height:18px;flex:none;stroke:var(--gold)}
+.coupon-row{display:flex;gap:12px;border:0;border-bottom:1px solid var(--border);transition:border-color .35s var(--ease-std);}
+.coupon-row:focus-within{border-bottom-color:var(--gold)}
+.coupon-row input{flex:1;min-width:0;min-height:46px;padding:0 2px;background:transparent;border:0;color:var(--off);font:inherit;font-size:.92rem;border-radius:0;letter-spacing:.12em;text-transform:uppercase;}
+.coupon-row input::placeholder{color:var(--mineral);letter-spacing:.12em}
+.coupon-row input:focus-visible{outline:none;outline-offset:2px;box-shadow:none;border:0;}
+.coupon-row .btn{min-height:46px;padding:0 6px;border:0;background:none;color:var(--gold);font-size:.72rem;letter-spacing:.2em;}
+.coupon-row .btn:hover:not(:disabled){background:none;color:var(--off)}
+.coupon-status{margin:0;color:var(--muted);font-size:.8rem;min-height:1.2em;line-height:1.5;padding-left:12px;border-left:2px solid var(--gold);}
+.coupon-status:empty{display:none}
+.payment-status{display:grid;gap:10px;padding-top:18px;border-top:0;}
+.payment-status p{margin:0;color:var(--muted);font-size:.84rem;padding-left:14px;border-left:2px solid var(--border);line-height:1.6;}
+.review{display:grid;gap:14px;padding-top:20px;border-top:1px solid var(--border);}
+.review-title{font-family:var(--font-display);font-size:1.6rem;font-weight:500;margin:0;}
+.review-list li{display:flex;justify-content:space-between;gap:12px;font-size:.9rem;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.review-list li span:last-child{font-variant-numeric:tabular-nums;color:var(--champagne)}
+.review-total{margin:0;font-size:1.35rem;font-variant-numeric:tabular-nums;font-family:var(--font-display);font-weight:500;}
+.review-pay{margin:0;color:var(--champagne);font-size:.88rem;padding-left:12px;border-left:2px solid var(--gold);}
+
+.mini-signup > .eyebrow{margin:0}
+.drawer-total{display:flex;justify-content:space-between;align-items:baseline;font-size:1.05rem;padding-bottom:4px;}

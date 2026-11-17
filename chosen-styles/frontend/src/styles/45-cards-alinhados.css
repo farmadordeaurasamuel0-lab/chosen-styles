@@ -1,0 +1,9 @@
+/* ===== Cartões de produto alinhados na mesma linha ===== */
+/* A descrição ocupa o espaço restante do cartão, então preço, tamanhos e botões
+ * ficam na mesma altura em todos os cartões da linha, mesmo com textos de tamanhos diferentes. */
+.product{display:flex;flex-direction:column;gap:14px;}
+
+.product .details-btn{margin-top:4px}
+
+.product .size-group{margin-top:8px}
+.product .add-row{margin-top:10px}

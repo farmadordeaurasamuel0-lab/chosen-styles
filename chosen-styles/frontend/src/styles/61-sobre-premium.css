@@ -1,0 +1,71 @@
+/* ===== Sobre a marca: composição editorial premium (o texto não muda) ===== */
+
+/* Fundo: luz quente discreta e uma cruz d'água quase invisível, em grande escala */
+.about{background:radial-gradient(ellipse at 88% 18%,#1d1912 0%,var(--paper) 58%);border-top:1px solid var(--border);position:relative;overflow:hidden;}
+.about::before{
+  content:"";
+  position:absolute;
+  right:-6%;
+  top:8%;
+  width:min(440px,70vw);
+  aspect-ratio:24/40;
+  background:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 40'><path d='M12 2v36M4 12h16' fill='none' stroke='%23D4AF37' stroke-width='0.35' stroke-linecap='round'/></svg>") center/contain no-repeat;
+  opacity:.09;
+  pointer-events:none;
+}
+.about-inner{display:grid;gap:clamp(28px,4vw,44px);max-width:1040px;position:relative;z-index:1;}
+
+/* Desktop: título fixo à esquerda e os pilares à direita, como página de revista */
+@media (min-width:900px){
+  .about-inner{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);column-gap:clamp(56px,7vw,128px);row-gap:28px;align-items:start;max-width:1180px}
+  .about-head{grid-column:1;grid-row:1 / span 3;position:sticky;top:120px}
+  .about-body{grid-column:1;grid-row:4}
+  .about-pillars{grid-column:2;grid-row:1;grid-template-columns:1fr;gap:0}
+  .about-cta{grid-column:2;grid-row:2;margin-top:0}
+  .about-draft{grid-column:1 / -1;grid-row:5}
+  .about-head h2{font-size:clamp(3.2rem,5.6vw,5.4rem);line-height:.98;letter-spacing:-.02em}
+}
+
+/* Pilares: numerados, com uma linha dourada que se abre ao passar o cursor */
+.about-pillars{counter-reset:pillar}
+.about-pillars li{counter-increment:pillar;position:relative;padding:26px 0 24px;transition:padding .45s var(--ease-out)}
+.about-pillars li::before{
+  content:"0" counter(pillar);
+  font-family:var(--font-display);
+  font-size:.82rem;
+  letter-spacing:.2em;
+  color:var(--gold);
+}
+.about-pillars li::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-1px;
+  width:100%;
+  height:1px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .6s var(--ease-out);
+}
+.about-pillars li:hover::after{transform:scaleX(1)}
+.about-pillars li:hover{padding-left:12px}
+.about-pillars li h3{transition:color .35s var(--ease-std)}
+.about-pillars li:hover h3{color:var(--gold)}
+.about-pillars li p{font-size:1rem;color:var(--champagne)}
+
+/* Cabeçalho da seção: frase de apoio com barra dourada */
+.about-lead{margin:0;max-width:44ch;font-size:clamp(1.05rem,1.8vw,1.25rem);line-height:1.6;color:var(--off);padding-left:18px;border-left:2px solid var(--gold);}
+.about-body{margin:0;max-width:60ch;line-height:1.8;color:var(--champagne);font-size:1.02rem;}
+
+/* Botão e nota */
+.about-cta .rt-btn{letter-spacing:.2em}
+.about-draft{margin:0;font-size:.78rem;letter-spacing:.08em;color:var(--muted);padding-top:18px;border-top:1px solid var(--border);}
+
+@media (max-width:899px){
+  .about::before{right:-30%;top:4%;opacity:.07}
+  .about-lead{padding-left:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .about-pillars li,.about-pillars li::after,.about-pillars li h3{transition:none!important}
+}

@@ -1,0 +1,8 @@
+/* ===== Manifesto ===== */
+
+.manifesto-inner{display:grid;gap:clamp(36px,6vw,72px);align-items:center}
+@media(min-width:900px){.manifesto-inner{grid-template-columns:1.05fr 1fr}}
+
+.clip-media .big{font-family:var(--font-display);font-size:clamp(2.6rem,8vw,5.4rem);font-style:italic;color:var(--gold);text-align:center;line-height:1}
+.manifesto h2{font-size:clamp(2.6rem,7vw,5rem);margin-bottom:24px}
+.manifesto p{color:var(--champagne);font-size:1.05rem;max-width:44ch;margin:0 0 16px}

@@ -1,0 +1,22 @@
+<section class="adm" id="adm" aria-labelledby="adm-title" hidden>
+  <div class="adm-head">
+    <a class="pv-back" href="#">Voltar à loja</a>
+    <p class="acc-eyebrow">Modo de teste</p>
+    <h2 id="adm-title" class="display">Pedidos</h2>
+    <p class="adm-note">Mostra somente os pedidos salvos neste navegador. Não é um painel de produção.</p>
+  </div>
+  <p class="adm-denied" id="adm-denied" hidden>Painel indisponível. A autenticação de administrador ainda não está configurada no servidor.</p>
+  <div id="adm-panel" hidden>
+    <div class="adm-actions">
+      <button class="btn btn-dark" type="button" id="adm-export">Baixar planilha (CSV)</button>
+      <button class="btn" type="button" id="adm-clear">Apagar pedidos de teste</button>
+    </div>
+    <p class="adm-note" id="adm-count"></p>
+    <div class="adm-wrap">
+      <table class="adm-table">
+        <thead><tr><th scope="col">Data</th><th scope="col">Pedido</th><th scope="col">Cliente</th><th scope="col">E-mail</th><th scope="col">Itens</th><th scope="col">Total</th><th scope="col">Pagamento</th></tr></thead>
+        <tbody id="adm-rows"></tbody>
+      </table>
+    </div>
+  </div>
+</section>

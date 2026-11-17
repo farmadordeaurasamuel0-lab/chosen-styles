@@ -1,0 +1,15 @@
+/* ===== Como comprar ===== */
+.howto{background:var(--black);border-top:1px solid var(--border)}
+.howto-inner{max-width:1040px;margin:0 auto;display:grid;gap:clamp(28px,4vw,48px)}
+.howto-head{display:grid;gap:16px}
+.howto-head h2{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:500;line-height:1.04;margin:0}
+.howto-head h2 em{color:var(--gold);font-style:italic}
+.howto-lead{margin:0;color:var(--champagne);max-width:52ch;line-height:1.6}
+.howto-steps{list-style:none;margin:0;padding:0;display:grid}
+@media(min-width:900px){.howto-steps{grid-template-columns:repeat(5,1fr);gap:0}}
+.howto-steps li{border-top:1px solid var(--border);padding:24px 18px 24px 0;display:grid;gap:10px;align-content:start;transition:border-color .4s var(--ease-std)}
+.howto-steps li:hover{border-top-color:var(--gold)}
+.howto-num{font-family:var(--font-display);color:var(--gold);font-size:1.1rem;letter-spacing:.08em}
+.howto-steps h3{margin:0;font-family:var(--font-display);font-size:1.45rem;font-weight:500;line-height:1.15}
+.howto-steps p{margin:0;color:var(--champagne);line-height:1.6;font-size:.95rem}
+@media (max-width:899px){.howto-steps li{padding-right:0}}

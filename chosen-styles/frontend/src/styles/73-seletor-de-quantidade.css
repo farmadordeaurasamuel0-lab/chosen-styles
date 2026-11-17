@@ -1,0 +1,15 @@
+/* ===== Seletor de quantidade (página do produto) =====
+ * Visual preto e dourado do site. Animações só com transform e opacity; com movimento reduzido, não há animação.
+ */
+.qty-stepper{display:flex;flex-direction:column;align-items:flex-start;gap:10px;margin:18px 0 0}
+.qty-stepper-title{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.qty-stepper-control{display:inline-flex;align-items:center;gap:4px;padding:4px;border:1px solid var(--border);border-radius:999px;background:var(--paper);user-select:none;-webkit-user-select:none}
+.qty-step{width:44px;height:44px;flex:0 0 44px;display:flex;align-items:center;justify-content:center;padding:0;border:1px solid transparent;border-radius:50%;background:transparent;color:var(--gold);cursor:pointer;touch-action:manipulation;-webkit-touch-callout:none;transition:background-color .2s var(--ease-std),border-color .2s var(--ease-std),opacity .2s var(--ease-std)}
+.qty-step:hover:not([aria-disabled="true"]){background:rgba(212,175,55,.12);border-color:var(--border)}
+.qty-step[aria-disabled="true"]{opacity:.35;cursor:default}
+.qty-step:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.qty-step path{fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round}
+.qty-stepper-value{position:relative;width:56px;height:44px;overflow:hidden}
+.qty-digit{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.75rem;font-weight:600;line-height:1;color:var(--off);font-variant-numeric:tabular-nums}
+.qty-digit.is-leaving{pointer-events:none}
+.qty-stepper-hint{margin:0;font-size:.8rem;color:var(--muted)}

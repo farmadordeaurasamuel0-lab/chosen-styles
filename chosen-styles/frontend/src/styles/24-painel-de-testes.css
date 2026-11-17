@@ -1,0 +1,12 @@
+/* ===== Painel de testes ===== */
+.adm{max-width:1200px;margin:0 auto;padding:calc(var(--header-h) + var(--banner-h) + 16px) clamp(18px,4vw,48px) 96px;display:grid;gap:24px}
+.adm-head{display:grid;gap:10px}
+.adm-head h1{font-size:clamp(2.4rem,5vw,3.6rem);margin:0;font-weight:500}
+.adm-note{margin:0;color:var(--muted);font-size:.88rem;line-height:1.5}
+.adm-denied{margin:0;color:var(--champagne)}
+.adm-actions{display:flex;flex-wrap:wrap;gap:12px}
+.adm-wrap{overflow-x:auto;border:1px solid var(--border)}
+.adm-table{width:100%;border-collapse:collapse;font-size:.88rem;font-variant-numeric:tabular-nums}
+.adm-table th,.adm-table td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--border);vertical-align:top}
+.adm-table th{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:500;white-space:nowrap}
+.adm-table td{color:var(--champagne)}

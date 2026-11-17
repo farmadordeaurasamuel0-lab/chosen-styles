@@ -1,0 +1,38 @@
+/* ===== Mobile e imersão (mantendo o design preto e dourado) ===== */
+
+/* 1. Telas de celular */
+@media (max-width:860px){
+  /* Campos com 16px ou mais: o iPhone e alguns Androids não dão zoom automático ao focar */
+  input,select,textarea{font-size:16px!important}
+  /* Áreas seguras: barra de gestos e notch */
+  .drawer-foot{padding-bottom:calc(28px + env(safe-area-inset-bottom,0px))}
+  .toast{bottom:calc(24px + env(safe-area-inset-bottom,0px))}
+  /* Janelas nunca passam da altura da tela */
+  .acc,.search{max-height:calc(100vh - 24px);max-height:calc(100dvh - 24px);overflow-y:auto}
+  .footer-links{gap:14px 22px}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+  .hero{padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+}
+
+/* 2. Fallback para navegadores sem as unidades novas de altura */
+.hero,.manifesto .clip-media{min-height:100vh}
+@supports (height:100svh){
+  .hero{min-height:100svh}
+  .manifesto .clip-media{height:100svh}
+}
+
+/* 3. Imersão: foto do início com movimento lento de câmera, depois de a foto entrar */
+.hero-media img{animation:hero-photo 2.2s var(--ease-out) both}
+@media (prefers-reduced-motion:reduce){.hero-media img{animation:none}}
+
+/* 4. Imersão: textura de película suave sobre toda a tela (estática, custo mínimo) */
+@media (pointer:coarse){body::after{display:none}}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:900;
+  opacity:.05;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}

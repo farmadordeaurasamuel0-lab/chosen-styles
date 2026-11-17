@@ -1,0 +1,11 @@
+/* ===== Login (visual e estado de carregamento) ===== */
+#acc-login{gap:18px}
+#acc-login .btn-submit{position:relative;margin-top:6px;letter-spacing:.2em}
+.btn-spinner{display:none;width:18px;height:18px;margin-left:12px;border:1.5px solid currentColor;border-right-color:transparent;border-radius:50%;vertical-align:middle}
+.btn-submit.is-loading .btn-spinner{display:inline-block;animation:btn-spin .8s linear infinite}
+.btn-submit.is-loading .btn-label{opacity:.7}
+.btn-submit:disabled{cursor:progress}
+@keyframes btn-spin{to{transform:rotate(360deg)}}
+#acc-login-error{margin:-6px 0 0;min-height:0}
+#acc-login-error:not(:empty){padding-left:12px;border-left:2px solid #b5563f;color:#e8a598;font-size:.86rem;line-height:1.5}
+@media (prefers-reduced-motion:reduce){.btn-submit.is-loading .btn-spinner{animation:none;border-right-color:currentColor}}

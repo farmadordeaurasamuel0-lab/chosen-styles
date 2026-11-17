@@ -1,0 +1,9 @@
+/* ===== Letras animadas ao digitar ===== */
+.letter-wrap{position:relative;display:flex;flex:1;min-width:0}
+.letter-wrap > input{width:100%;min-width:0}
+input[data-letters]{color:transparent!important;-webkit-text-fill-color:transparent;caret-color:var(--gold)}
+.letter-mirror{position:absolute;top:0;right:0;bottom:0;left:0;display:flex;align-items:center;overflow:hidden;white-space:pre;pointer-events:none;color:var(--off);box-sizing:border-box}
+.letter{display:inline-block;white-space:pre}
+.letter.is-new{animation:letter-in .42s var(--ease-out) both}
+@keyframes letter-in{from{opacity:0;transform:translateY(.5em) scale(.85)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.letter.is-new{animation:none}}

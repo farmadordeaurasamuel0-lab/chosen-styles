@@ -1,0 +1,18 @@
+{
+  "name": "chosen-styles-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Frontend da loja Chosen Styles (site estático gerado por build.mjs).",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node tests/logic.test.js",
+    "test:e2e": "node tests/e2e/run.mjs",
+    "test:pedidos": "node tests/e2e/pedidos.mjs",
+    "test:carregamento": "node tests/e2e/carregamento.mjs",
+    "test:quantidade": "node tests/e2e/quantidade.mjs",
+    "test:contato": "node tests/e2e/contato.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

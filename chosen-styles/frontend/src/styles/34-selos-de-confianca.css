@@ -1,0 +1,4 @@
+/* ===== Selos de confiança (ícones e textos provisórios) ===== */
+.trust{list-style:none;margin:0;padding:22px clamp(18px,4vw,48px);display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(18px,4vw,56px);background:var(--black);border-bottom:1px solid var(--border)}
+
+@media (max-width:600px){.trust{justify-content:flex-start;gap:14px 26px;padding:18px}.trust-item{font-size:.7rem}}

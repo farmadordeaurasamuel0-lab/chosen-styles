@@ -1,0 +1,19 @@
+/* ===== Seus dados (visual) ===== */
+.mini-signup{display:grid;gap:18px;padding-top:22px;border-top:1px solid var(--border);}
+.step-head{display:flex;align-items:baseline;gap:14px}
+.step-num{font-family:var(--font-display);font-size:1rem;color:var(--gold);letter-spacing:.08em}
+.step-title{margin:0;font-family:var(--font-display);font-size:1.5rem;font-weight:500;line-height:1.1;color:var(--off)}
+.mini-signup .field{display:grid;gap:4px;padding:10px 0 6px;border-bottom:1px solid var(--border);transition:border-color .35s var(--ease-std)}
+.mini-signup .field:focus-within{border-bottom-color:var(--gold)}
+.mini-signup .field-label{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .3s var(--ease-std)}
+.mini-signup .field:focus-within .field-label{color:var(--gold)}
+.mini-signup .field input{min-height:40px;padding:0;background:transparent;border:0;font-size:1rem;color:var(--off);letter-spacing:.02em;border-radius:0}
+.mini-signup .field input:focus-visible{outline:none;box-shadow:none}
+.mini-signup .field input[aria-invalid=true]{color:#e8a598}
+.mini-signup .field:has(input[aria-invalid=true]){border-bottom-color:#b5563f}
+.mini-signup .field-error{min-height:0;margin:0;font-size:.82rem;line-height:1.5;color:#e8a598;padding-left:12px;border-left:2px solid #b5563f;}
+.mini-signup .field-error:empty{display:none}
+.mini-signup > .btn{justify-self:start;min-height:46px;padding:0 22px;border-color:var(--gold);color:var(--gold);letter-spacing:.18em;font-size:.72rem}
+.mini-signup > .btn:hover:not(:disabled){background:var(--gold);color:var(--black)}
+.mini-signup .signup-note{margin:0;font-size:.78rem;line-height:1.6;color:var(--muted);padding-left:12px;border-left:2px solid var(--border)}
+@media (prefers-reduced-motion:reduce){.mini-signup .field,.mini-signup .field-label{transition:none}}

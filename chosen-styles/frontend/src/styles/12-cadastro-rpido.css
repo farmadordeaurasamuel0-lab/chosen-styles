@@ -1,0 +1,9 @@
+/* ===== Cadastro rápido ===== */
+
+.mini-signup label{display:grid;gap:6px;font-size:.85rem;color:var(--champagne)}
+.mini-signup input{min-height:48px;padding:0 14px;background:var(--black);border:1px solid var(--border);color:var(--off);font:inherit;font-size:1rem;border-radius:0}
+.mini-signup input:focus-visible{outline:2px solid var(--off);outline-offset:2px}
+.mini-signup input[aria-invalid=true]{border-color:#b5563f}
+
+.signup-note{margin:0;color:var(--muted);font-size:.85rem}
+
